@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>com.asgarov.unicodeplugin</id>
+    <name>Unicode encoder</name>
+    <vendor email="asgarov1@gmail.com">AsgarovJ</vendor>
+
+    <description><![CDATA[
+    Plugin allows to encode non latin characters into unicode.
+    <br/>
+
+    You can either select text and then only non-latin chars inside of selection will be encoded
+    or you can right click without selection and whole document's not latin characters will be unicoded.
+
+    <br/>
+    Use right click for the "Unicodify" option to appear in menu or use shortcut "Ctrl + Alt + U"
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="Unicodify.EncodeAction"
+                class="com.javidasgarov.encoder.action.EncodeAction"
+                text="Unicodify"
+                description="Encodes non-latin characters into unicode">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut first-keystroke="ctrl alt u" keymap="$default"/>
+        </action>
+    </actions>
+</idea-plugin>

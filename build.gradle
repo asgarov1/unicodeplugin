@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.2.1'
+}
+
+group 'com.javidasgarov.encoder'
+version '1.0'
+
+intellij {
+    version = '2021.1'
+}
+
+buildSearchableOptions {
+    enabled = false
+}
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+patchPluginXml {
+    version = project.version
+    sinceBuild = '203'
+    untilBuild = '212.*'
+}
