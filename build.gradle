@@ -22,6 +22,6 @@ repositories {
 
 patchPluginXml {
     version = project.version
-    sinceBuild = '203'
+    sinceBuild = '191'
     untilBuild = '212.*'
 }
