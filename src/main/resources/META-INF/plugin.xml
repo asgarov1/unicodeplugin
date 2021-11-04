@@ -1,17 +1,17 @@
 <idea-plugin>
-    <id>com.asgarov.unicodeplugin</id>
-    <name>Unicode encoder</name>
-    <vendor email="asgarov1@gmail.com">AsgarovJ</vendor>
+    <id>com.javidasgarov.unicodifier</id>
+    <name>Unicodifier</name>
+    <vendor email="asgarov1@gmail.com">Asgarov Javid</vendor>
 
     <description><![CDATA[
-    Plugin allows to encode non latin characters into unicode.
+    <h2>Plugin allows to encode/decode unicode.</h2>
     <br/>
-
-    You can either select text and then only non-latin chars inside of selection will be encoded
-    or you can right click without selection and whole document's not latin characters will be unicoded.
-
+    You can either unicode all non-latin characters in selected text with "Unicodify" option or decode all unicode characters
+    in selected text with "Decodify"
+    <br/>
     <br/>
     Use right click for the "Unicodify" option to appear in menu or use shortcut "Ctrl + Alt + U"
+    Similarly for "Decodify" or use shortcut "Ctrl + Alt + D"
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -23,14 +23,20 @@
     </extensions>
 
     <actions>
-        <!-- Add your actions here -->
-        <action id="Unicodify.EncodeAction"
+        <action id="Unicodifier.EncodeAction"
                 class="com.javidasgarov.encoder.action.EncodeAction"
                 text="Unicodify"
                 description="Encodes non-latin characters into unicode">
-            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <keyboard-shortcut first-keystroke="ctrl alt u" keymap="$default"/>
+        </action>
+
+        <action id="Unicodifier.DecodeAction"
+                class="com.javidasgarov.encoder.action.DecodeAction"
+                text="Decodify"
+                description="Decodes unicode into text">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut first-keystroke="ctrl alt d" keymap="$default"/>
         </action>
     </actions>
 </idea-plugin>
