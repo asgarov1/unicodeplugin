@@ -6,8 +6,11 @@
     <description><![CDATA[
     <h2>Plugin allows to encode/decode unicode.</h2>
     <br/>
-    You can either unicode all non-latin characters in selected text with "Unicodify" option or decode all unicode characters
-    in selected text with "Decodify"
+    You can either:
+    <ol>
+        <li>unicode all non-latin characters in selected text with "Unicodify" option</li>
+        <li>unicode all characters in selected text with "Unicodify all" option</li>
+        <li>or decode all unicode characters in selected text with "Decodify"</li>
     <br/>
     <br/>
     Use right click for the "Unicodify" option to appear in menu or use shortcut "Ctrl + Alt + U"
@@ -22,6 +25,16 @@
         <!-- Add your extensions here -->
     </extensions>
 
+    <change-notes><![CDATA[
+        ## [1.2] - 2021-25-11
+        ### Fixed
+        - A bug for when selection was done outside the editor
+
+         ## [1.3] - 2022-03-10
+        ### Added feature
+        - An additional option to encode all chracters (as well as only non-latin ones)
+    ]]></change-notes>
+
     <actions>
         <action id="Unicodifier.EncodeAction"
                 class="com.javidasgarov.encoder.action.EncodeAction"
@@ -29,6 +42,13 @@
                 description="Encodes non-latin characters into unicode">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
             <keyboard-shortcut first-keystroke="ctrl alt u" keymap="$default"/>
+        </action>
+
+        <action id="Unicodifier.EncodeAllAction"
+                class="com.javidasgarov.encoder.action.EncodeAllAction"
+                text="Unicodify All"
+                description="Encodes all characters into unicode">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
 
         <action id="Unicodifier.DecodeAction"

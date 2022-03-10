@@ -1,6 +1,9 @@
 package com.javidasgarov.encoder.util;
 
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class StringUtil {
     public static String replaceNonUnicode(String content) {
         var stringBuilder = new StringBuilder();
@@ -12,6 +15,13 @@ public class StringUtil {
             }
         }
         return stringBuilder.toString();
+    }
+
+    public static String replaceAll(String content) {
+        return Arrays.stream(content.split(""))
+                .map(s -> s.charAt(0))
+                .map(StringUtil::toUnicode)
+                .collect(Collectors.joining());
     }
 
     private static String toUnicode(char ch) {
