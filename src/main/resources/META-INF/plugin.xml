@@ -26,13 +26,17 @@
     </extensions>
 
     <change-notes><![CDATA[
-        ## [1.2] - 2021-25-11
-        ### Fixed
-        - A bug for when selection was done outside the editor
+        <h4>[1.2] - 2021-25-11</h4>
+        <p>Fixed: A bug for when selection was done outside the editor</p>
 
-         ## [1.3] - 2022-03-10
-        ### Added feature
-        - An additional option to encode all chracters (as well as only non-latin ones)
+        <h4>[1.3] - 2022-03-10</h4>
+        <p>Added feature - An additional option to encode all chracters (as well as only non-latin ones)</p>
+
+        <h4> [1.3.1] - 2022-08-01</p>
+        <p> Compatibility issue fixed </p>
+
+        <h4> [1.3.2] - 2023-03-16</p>
+        <p> Updated to be compatible with latest intellij </p>
     ]]></change-notes>
 
     <actions>

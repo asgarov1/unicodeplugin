@@ -7,6 +7,8 @@ You can either:
 - Select text, right mouse click and press `Unicodify` for all non-latin chars under selection to be unicoded
 - Select text, right mouse click and press `Decodify` for all unicode chars under selection to be decoded into text
 
+There is also an option `Unicodify All` in order to unicodify all selected characters
+
 Shortcut `Ctrl + Alt + U` / `Ctrl + Alt + D` can be used as well.
 
 ## To build

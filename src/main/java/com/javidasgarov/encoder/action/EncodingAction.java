@@ -12,7 +12,6 @@ import java.util.Optional;
 import static com.intellij.openapi.actionSystem.CommonDataKeys.EDITOR;
 import static com.intellij.openapi.command.WriteCommandAction.runWriteCommandAction;
 import static com.javidasgarov.encoder.util.ActionUtil.getSelectedText;
-import static com.javidasgarov.encoder.util.StringUtil.replaceNonUnicode;
 
 public abstract class EncodingAction extends AnAction {
 
