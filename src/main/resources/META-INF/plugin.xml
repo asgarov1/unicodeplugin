@@ -40,6 +40,9 @@
 
         <h4> [1.4.0] - 2023-09-24</p>
         <p> Updated to be compatible with Intellij version 232.* </p>
+
+        <h4> [1.4.1] - 2024-03-23</p>
+        <p> Updated to be compatible with Intellij version 213+ without future updates </p>
     ]]></change-notes>
 
     <actions>

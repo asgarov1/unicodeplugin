@@ -7,7 +7,7 @@ group 'com.javidasgarov.encoder'
 version '1.4.0'
 
 intellij {
-    version = '2023.2.2'
+    version = '2021.3.3'
     plugins = ['com.intellij.java']
 }
 
@@ -37,6 +37,10 @@ repositories {
 }
 
 patchPluginXml {
-    sinceBuild.set("222")
-    untilBuild.set("232.*")
+    sinceBuild.set("213")
+    untilBuild.set("")
+}
+
+publishPlugin {
+    token = System.getenv("PUBLISH_TOKEN")
 }
