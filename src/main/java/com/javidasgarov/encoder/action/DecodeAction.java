@@ -1,6 +1,7 @@
 package com.javidasgarov.encoder.action;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
+
 
 public class DecodeAction extends EncodingAction {
     @Override

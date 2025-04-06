@@ -1,14 +1,17 @@
 plugins {
+    id 'org.jetbrains.intellij.platform' version '2.5.0'
     id 'java'
-    id 'org.jetbrains.intellij' version '1.15.0'
 }
 
 group 'com.javidasgarov.encoder'
-version '1.4.0'
+version '1.4.2'
 
-intellij {
-    version = '2021.3.3'
-    plugins = ['com.intellij.java']
+repositories {
+    mavenCentral()
+
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
 buildSearchableOptions {
@@ -16,29 +19,33 @@ buildSearchableOptions {
 }
 
 dependencies {
-    implementation 'org.projectlombok:lombok:1.18.22'
-    compileOnly 'org.projectlombok:lombok:1.18.22'
-    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    intellijPlatform {
+        intellijIdeaCommunity('2024.2.3')
+        bundledPlugin 'com.intellij.java'
+    }
 
-    //test
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.10.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+    implementation 'org.apache.commons:commons-text:1.13.0'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.22'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'}
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params'
 
-test {
-    useJUnitPlatform()
-}
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
 
-repositories {
-    mavenCentral()
+    testCompileOnly 'org.projectlombok:lombok:1.18.38'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.38'
+
+    testImplementation 'org.mockito:mockito-core:5.17.0'
 }
 
 patchPluginXml {
-    sinceBuild.set("213")
-    untilBuild.set("")
+    sinceBuild.set("222")
+}
+
+test {
+    useJUnitPlatform()
 }
 
 publishPlugin {
