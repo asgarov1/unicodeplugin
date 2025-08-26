@@ -1,10 +1,10 @@
 plugins {
-    id 'org.jetbrains.intellij.platform' version '2.5.0'
+    id 'org.jetbrains.intellij.platform' version '2.7.2'
     id 'java'
 }
 
 group 'com.javidasgarov.encoder'
-version '1.4.2'
+version '1.4.3'
 
 repositories {
     mavenCentral()
@@ -24,12 +24,13 @@ dependencies {
         bundledPlugin 'com.intellij.java'
     }
 
-    implementation 'org.apache.commons:commons-text:1.13.0'
+    implementation 'org.apache.commons:commons-text:1.14.0'
 
-    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation platform('org.junit:junit-bom:5.13.4')
     testImplementation 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testImplementation 'org.junit.jupiter:junit-jupiter-params'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     compileOnly 'org.projectlombok:lombok:1.18.38'
     annotationProcessor 'org.projectlombok:lombok:1.18.38'
@@ -37,7 +38,7 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.38'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.38'
 
-    testImplementation 'org.mockito:mockito-core:5.17.0'
+    testImplementation 'org.mockito:mockito-core:5.19.0'
 }
 
 patchPluginXml {
